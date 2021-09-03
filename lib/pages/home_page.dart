@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/theme.dart';
+import 'package:plant_app/widget/bottom_navbar.dart';
 import 'package:plant_app/widget/home_category_card.dart';
 import 'package:plant_app/widget/photo_card.dart';
 import 'package:plant_app/widget/plant_type_card.dart';
@@ -9,6 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
+      bottomNavigationBar: BottomNavbar(),
       body: Stack(
         children: [
           Column(
@@ -73,7 +75,7 @@ class HomePage extends StatelessWidget {
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                  top: 75,
+                  top: 55,
                   left: defaultMargin,
                   right: defaultMargin,
                 ),
@@ -275,9 +277,9 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
+              )
             ],
-          )
+          ),
         ],
       ),
     );
