@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/pages/login_page.dart';
 import 'package:plant_app/theme.dart';
 import 'package:plant_app/widget/onboard_bullet.dart';
 
@@ -136,7 +137,9 @@ class BoardingPage extends StatelessWidget {
                             : Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) {},
+                                  builder: (context) {
+                                    return LoginPage();
+                                  },
                                 ),
                               );
                   },
