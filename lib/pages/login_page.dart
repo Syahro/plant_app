@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/pages/home_page.dart';
 import 'package:plant_app/theme.dart';
 
 class LoginPage extends StatelessWidget {
@@ -148,7 +149,16 @@ class LoginPage extends StatelessWidget {
                     width: double.infinity,
                     height: 50,
                     child: FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return HomePage();
+                            },
+                          ),
+                        );
+                      },
                       color: lightGreenColor,
                       child: Text(
                         'LOGIN',

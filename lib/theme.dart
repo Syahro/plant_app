@@ -10,3 +10,5 @@ Color darkGreyColor = Color(0XFF6A6F7D);
 Color whiteColor = Color(0XFFFFFFFF);
 Color blueColor = Color(0XFF48A2F5);
 Color yellowColor = Color(0XFFFFCD00);
+Color linearOne = Color(0XFF61D2C4);
+Color linearTwo = Color(0XFF29D890);
