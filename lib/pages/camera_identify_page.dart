@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/pages/detail_identify_page.dart';
 import 'package:plant_app/theme.dart';
 
 class CameraIdentifyPage extends StatelessWidget {
@@ -75,15 +76,27 @@ class CameraIdentifyPage extends StatelessWidget {
                       ),
                       Column(
                         children: [
-                          Container(
-                            height: 63,
-                            width: 63,
-                            decoration: BoxDecoration(
-                              color: Colors.transparent,
-                              border: Border.all(
-                                color: whiteColor,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return DetailIdentifyPage();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Container(
+                              height: 63,
+                              width: 63,
+                              decoration: BoxDecoration(
+                                color: Colors.transparent,
+                                border: Border.all(
+                                  color: whiteColor,
+                                ),
+                                borderRadius: BorderRadius.circular(32),
                               ),
-                              borderRadius: BorderRadius.circular(32),
                             ),
                           ),
                         ],
