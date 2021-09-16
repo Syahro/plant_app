@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:plant_app/theme.dart';
 import 'package:plant_app/widget/bottom_navbar.dart';
@@ -11,276 +13,267 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: backgroundColor,
       bottomNavigationBar: BottomNavbar(),
-      body: Stack(
-        children: [
-          Column(
-            children: [
-              Expanded(
-                flex: 3,
-                child: Column(
-                  children: [
-                    Expanded(
-                      flex: 9,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: [linearOne, linearTwo],
+      body: SafeArea(
+        child: ListView(
+          children: [
+            Stack(
+              children: [
+                Container(
+                  height: 172,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        linearOne,
+                        linearTwo,
+                      ],
+                    ),
+                  ),
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        top: -90,
+                        right: -40,
+                        child: Container(
+                          height: 204,
+                          width: 204,
+                          decoration: BoxDecoration(
+                            color: whiteColor.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(102),
                           ),
                         ),
                       ),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        color: backgroundColor,
+                      Positioned(
+                        bottom: -10,
+                        right: -12,
+                        child: Text(
+                          'Home',
+                          style: TextStyle(
+                            fontSize: 67,
+                            fontWeight: FontWeight.w900,
+                            color: whiteColor.withOpacity(0.2),
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                flex: 7,
-                child: Container(
-                  color: backgroundColor,
-                ),
-              ),
-            ],
-          ),
-          Positioned(
-            left: 210,
-            bottom: 520,
-            child: Container(
-              height: 204,
-              width: 204,
-              decoration: BoxDecoration(
-                color: whiteColor.withOpacity(0.1),
-                borderRadius: BorderRadius.circular(102),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 215,
-            bottom: 460,
-            child: Text(
-              'Home',
-              style: TextStyle(
-                  fontSize: 67,
-                  color: whiteColor.withOpacity(0.1),
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
-          ListView(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(
-                  top: 55,
-                  left: defaultMargin,
-                  right: defaultMargin,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Hello Taylor,',
-                              style: TextStyle(
-                                fontSize: 21,
-                                color: whiteColor.withOpacity(0.8),
-                                fontWeight: FontWeight.bold,
-                              ),
+                      Column(
+                        children: [
+                          SizedBox(
+                            height: 70,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 23),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Hello Taylor,',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: whiteColor,
+                                        fontSize: 21,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 9,
+                                    ),
+                                    Text(
+                                      'Let’s Learn More About Plants',
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                        color: whiteColor.withOpacity(0.5),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Image.asset(
+                                  'assets/profile.png',
+                                  width: 47,
+                                  height: 47,
+                                ),
+                              ],
                             ),
-                            SizedBox(
-                              height: 9,
-                            ),
-                            Text(
-                              'Let’s Learn More About Plants',
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                color: whiteColor.withOpacity(0.6),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Image.asset(
-                          'assets/profile.png',
-                          width: 47,
-                          height: 47,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      height: 50,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: whiteColor,
-                        borderRadius: BorderRadius.circular(25),
-                        boxShadow: [
-                          BoxShadow(
-                            color: darkGreyColor.withOpacity(0.1),
-                            blurRadius: 4,
-                            spreadRadius: 3,
-                            offset: Offset.zero,
                           )
                         ],
                       ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: defaultMargin,
-                        ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  color: backgroundColor,
+                  margin: EdgeInsets.only(top: 172),
+                  padding: EdgeInsets.only(top: 60),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 14),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Image.asset(
-                              'assets/search.png',
-                              width: 14,
-                              height: 14,
+                            HomeCategoryCard(
+                              imageUrl: 'assets/identify.png',
+                              title: 'IDENTIFY',
+                              isActive: true,
                             ),
-                            SizedBox(
-                              width: 12,
+                            HomeCategoryCard(
+                              imageUrl: 'assets/species.png',
+                              title: 'SPECIES',
+                              isActive: false,
                             ),
-                            Text(
-                              'Search For Plants',
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: darkGreyColor.withOpacity(0.3),
-                                fontWeight: FontWeight.w400,
-                              ),
+                            HomeCategoryCard(
+                              imageUrl: 'assets/articels.png',
+                              title: 'ARTICLES',
+                              isActive: false,
                             ),
                           ],
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 35,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        HomeCategoryCard(
-                          imageUrl: 'assets/identify.png',
-                          title: 'IDENTIFY',
-                          isActive: true,
+                      Padding(
+                        padding: EdgeInsets.only(left: 23),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 24,
+                            ),
+                            Text(
+                              'Plant Types',
+                              style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                                color: darkColor,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                children: [
+                                  PlantTypeCard(
+                                    imageUrl: 'assets/type1.png',
+                                    title: 'Home Plants',
+                                    countType: '68',
+                                  ),
+                                  SizedBox(
+                                    width: 14,
+                                  ),
+                                  PlantTypeCard(
+                                    imageUrl: 'assets/type2.png',
+                                    title: 'Huge Plants',
+                                    countType: '102',
+                                  ),
+                                  SizedBox(
+                                    width: 23,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 25,
+                            ),
+                            Text(
+                              'Photography',
+                              style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                                color: darkColor,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 16,
+                            ),
+                            SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                children: [
+                                  PhotoCard(
+                                    imageUrl: 'assets/photo1.png',
+                                    tags: '#Mini',
+                                  ),
+                                  SizedBox(
+                                    width: 17,
+                                  ),
+                                  PhotoCard(
+                                    imageUrl: 'assets/photo2.png',
+                                    tags: '#Homely',
+                                  ),
+                                  SizedBox(
+                                    width: 17,
+                                  ),
+                                  PhotoCard(
+                                    imageUrl: 'assets/photo3.png',
+                                    tags: '#Cute',
+                                  ),
+                                  SizedBox(
+                                    width: 23,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                          ],
                         ),
-                        HomeCategoryCard(
-                          imageUrl: 'assets/species.png',
-                          title: 'SPECIES',
-                          isActive: false,
-                        ),
-                        HomeCategoryCard(
-                          imageUrl: 'assets/articels.png',
-                          title: 'ARTICLES',
-                          isActive: false,
-                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Positioned(
+                  top: 148,
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 23),
+                    width: MediaQuery.of(context).size.width - (2 * 23),
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: whiteColor,
+                      borderRadius: BorderRadius.circular(25),
+                      boxShadow: [
+                        BoxShadow(
+                          color: darkGreyColor.withOpacity(0.1),
+                          blurRadius: 1,
+                          spreadRadius: 1,
+                          offset: Offset(1, 1),
+                        )
                       ],
                     ),
-                    SizedBox(
-                      height: 24,
-                    ),
-                    Text(
-                      'Plant Types',
-                      style: TextStyle(
-                        fontSize: 17,
-                        color: darkColor,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  left: defaultMargin,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 25),
                       child: Row(
                         children: [
-                          PlantTypeCard(
-                            imageUrl: 'assets/type1.png',
-                            title: 'Home Plants',
-                            countType: '68 Types of Plants',
+                          Icon(
+                            Icons.search,
+                            color: darkGreyColor.withOpacity(0.3),
                           ),
                           SizedBox(
-                            width: 14,
+                            width: 12,
                           ),
-                          PlantTypeCard(
-                            imageUrl: 'assets/type2.png',
-                            title: 'Huge Plants',
-                            countType: '102 Type Of Plants',
-                          ),
-                          SizedBox(
-                            width: defaultMargin,
+                          Text(
+                            'Search For Plants ',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14,
+                              color: darkGreyColor.withOpacity(0.3),
+                            ),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: 25,
-                    ),
-                    Text(
-                      'Photography',
-                      style: TextStyle(
-                        fontSize: 17,
-                        color: darkColor,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          PhotoCard(
-                            imageUrl: 'assets/photo1.png',
-                            tags: '#Mini',
-                          ),
-                          SizedBox(
-                            width: 17,
-                          ),
-                          PhotoCard(
-                            imageUrl: 'assets/photo2.png',
-                            tags: '#Homely',
-                          ),
-                          SizedBox(
-                            width: 17,
-                          ),
-                          PhotoCard(
-                            imageUrl: 'assets/photo3.png',
-                            tags: '#Cute',
-                          ),
-                          SizedBox(
-                            width: defaultMargin,
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 25,
-                    ),
-                  ],
+                  ),
                 ),
-              )
-            ],
-          ),
-        ],
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

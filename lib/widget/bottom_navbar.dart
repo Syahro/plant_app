@@ -1,6 +1,6 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_app/theme.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class BottomNavbar extends StatelessWidget {
   @override
