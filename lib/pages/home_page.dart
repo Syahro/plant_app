@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:plant_app/pages/camera_identify_page.dart';
 import 'package:plant_app/theme.dart';
 import 'package:plant_app/widget/bottom_navbar.dart';
 import 'package:plant_app/widget/home_category_card.dart';
@@ -117,10 +118,22 @@ class HomePage extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            HomeCategoryCard(
-                              imageUrl: 'assets/identify.png',
-                              title: 'IDENTIFY',
-                              isActive: true,
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return CameraIdentifyPage();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: HomeCategoryCard(
+                                imageUrl: 'assets/identify.png',
+                                title: 'IDENTIFY',
+                                isActive: true,
+                              ),
                             ),
                             HomeCategoryCard(
                               imageUrl: 'assets/species.png',
