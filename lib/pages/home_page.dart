@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:plant_app/pages/camera_identify_page.dart';
+import 'package:plant_app/pages/species_page.dart';
 import 'package:plant_app/theme.dart';
 import 'package:plant_app/widget/bottom_navbar.dart';
 import 'package:plant_app/widget/home_category_card.dart';
@@ -42,6 +43,18 @@ class HomePage extends StatelessWidget {
                           width: 204,
                           decoration: BoxDecoration(
                             color: whiteColor.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(102),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 60,
+                        right: -40,
+                        child: Container(
+                          height: 124,
+                          width: 124,
+                          decoration: BoxDecoration(
+                            color: whiteColor.withOpacity(0.13),
                             borderRadius: BorderRadius.circular(102),
                           ),
                         ),
@@ -135,10 +148,22 @@ class HomePage extends StatelessWidget {
                                 isActive: true,
                               ),
                             ),
-                            HomeCategoryCard(
-                              imageUrl: 'assets/species.png',
-                              title: 'SPECIES',
-                              isActive: false,
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return SpeciesPage();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: HomeCategoryCard(
+                                imageUrl: 'assets/species.png',
+                                title: 'SPECIES',
+                                isActive: false,
+                              ),
                             ),
                             HomeCategoryCard(
                               imageUrl: 'assets/articels.png',
