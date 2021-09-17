@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:plant_app/pages/profile_page.dart';
 import 'package:plant_app/theme.dart';
 
 class BottomNavbar extends StatelessWidget {
@@ -22,10 +23,22 @@ class BottomNavbar extends StatelessWidget {
             size: 22,
             color: lightGreenColor,
           ),
-          Icon(
-            Icons.person_outlined,
-            size: 22,
-            color: lightGreenColor,
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ProfilePage();
+                  },
+                ),
+              );
+            },
+            child: Icon(
+              Icons.person_outlined,
+              size: 22,
+              color: lightGreenColor,
+            ),
           ),
         ],
         onTap: (index) {
