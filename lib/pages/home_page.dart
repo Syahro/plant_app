@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:plant_app/pages/articles_page.dart';
 import 'package:plant_app/pages/camera_identify_page.dart';
 import 'package:plant_app/pages/species_page.dart';
 import 'package:plant_app/theme.dart';
@@ -165,10 +166,22 @@ class HomePage extends StatelessWidget {
                                 isActive: false,
                               ),
                             ),
-                            HomeCategoryCard(
-                              imageUrl: 'assets/articels.png',
-                              title: 'ARTICLES',
-                              isActive: false,
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return ArticlesPage();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: HomeCategoryCard(
+                                imageUrl: 'assets/articels.png',
+                                title: 'ARTICLES',
+                                isActive: false,
+                              ),
                             ),
                           ],
                         ),
