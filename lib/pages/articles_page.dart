@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/pages/detail_articles_page.dart';
 import 'package:plant_app/widget/bottom_navbar.dart';
 
 import '../theme.dart';
@@ -218,106 +219,118 @@ class ArticlesPage extends StatelessWidget {
                       SizedBox(
                         height: 25,
                       ),
-                      Container(
-                        height: 265,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: whiteColor,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.1),
-                              blurRadius: 1,
-                              spreadRadius: 2,
-                              offset: Offset(1, 1),
-                            )
-                          ],
-                        ),
-                        child: Column(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.vertical(
-                                top: Radius.circular(10),
-                              ),
-                              child: Image.asset(
-                                'assets/articles2.png',
-                                width: double.infinity,
-                                height: 145,
-                                fit: BoxFit.cover,
-                              ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return DetailArticlesPage();
+                              },
                             ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 15),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Even on Urban Excursions, Finding Mother Nature\'s Charms',
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                      color: darkColor,
+                          );
+                        },
+                        child: Container(
+                          height: 265,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: whiteColor,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.1),
+                                blurRadius: 1,
+                                spreadRadius: 2,
+                                offset: Offset(1, 1),
+                              )
+                            ],
+                          ),
+                          child: Column(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.vertical(
+                                  top: Radius.circular(10),
+                                ),
+                                child: Image.asset(
+                                  'assets/articles2.png',
+                                  width: double.infinity,
+                                  height: 145,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 15),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Even on Urban Excursions, Finding Mother Nature\'s Charms',
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold,
+                                        color: darkColor,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Image.asset(
-                                        'assets/profile1.png',
-                                        width: 28,
-                                        height: 28,
-                                      ),
-                                      SizedBox(
-                                        width: 9,
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Shivani Vora',
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 11,
-                                              color: darkGreyColor,
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Image.asset(
+                                          'assets/profile1.png',
+                                          width: 28,
+                                          height: 28,
+                                        ),
+                                        SizedBox(
+                                          width: 9,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Shivani Vora',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 11,
+                                                color: darkGreyColor,
+                                              ),
                                             ),
-                                          ),
-                                          SizedBox(
-                                            height: 4,
-                                          ),
-                                          Text(
-                                            '2019 . 01 . 01',
-                                            style: TextStyle(
-                                                fontSize: 9,
-                                                color: darkGreyColor
-                                                    .withOpacity(0.5),
-                                                fontWeight: FontWeight.w500),
-                                          ),
-                                        ],
-                                      ),
-                                      Spacer(),
-                                      Icon(
-                                        Icons.bookmark_border,
-                                        color: darkGreyColor.withOpacity(0.5),
-                                      ),
-                                      SizedBox(
-                                        width: 25,
-                                      ),
-                                      Icon(
-                                        Icons.favorite_border,
-                                        color: darkGreyColor.withOpacity(0.5),
-                                      ),
-                                    ],
-                                  )
-                                ],
+                                            SizedBox(
+                                              height: 4,
+                                            ),
+                                            Text(
+                                              '2019 . 01 . 01',
+                                              style: TextStyle(
+                                                  fontSize: 9,
+                                                  color: darkGreyColor
+                                                      .withOpacity(0.5),
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                          ],
+                                        ),
+                                        Spacer(),
+                                        Icon(
+                                          Icons.bookmark_border,
+                                          color: darkGreyColor.withOpacity(0.5),
+                                        ),
+                                        SizedBox(
+                                          width: 25,
+                                        ),
+                                        Icon(
+                                          Icons.favorite_border,
+                                          color: darkGreyColor.withOpacity(0.5),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(
