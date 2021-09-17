@@ -82,7 +82,17 @@ class CameraIdentifyPage extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return DetailIdentifyPage();
+                                    return DetailIdentifyPage(
+                                      imageUrl: 'spinach.png',
+                                      categoryOne: 'VEGETABLES',
+                                      categoryTwo: 'HELATHY',
+                                      title: 'Spinach',
+                                      kingdomeClass: 'Plantee',
+                                      familyClass: 'Amaranthaceae',
+                                      rating: '4.5',
+                                      description:
+                                          'Spinach is thought to have originated in ancient Persia (modern Iran and neighboring countries). It is not known by whom, or when, spinach was introduced to India, but the plant was subsequ ently introduced to ancient China, where it was known as "Persian vegetable"',
+                                    );
                                   },
                                 ),
                               );

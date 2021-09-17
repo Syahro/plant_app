@@ -4,6 +4,25 @@ import 'package:plant_app/widget/bottom_navbar.dart';
 import 'package:plant_app/widget/category_identify_bullet.dart';
 
 class DetailIdentifyPage extends StatelessWidget {
+  final String imageUrl;
+  final String categoryOne;
+  final String categoryTwo;
+  final String title;
+  final String rating;
+  final String kingdomeClass;
+  final String familyClass;
+  final String description;
+
+  DetailIdentifyPage({
+    this.imageUrl,
+    this.categoryOne,
+    this.categoryTwo,
+    this.title,
+    this.rating,
+    this.kingdomeClass,
+    this.familyClass,
+    this.description,
+  });
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +42,7 @@ class DetailIdentifyPage extends StatelessWidget {
                           child: Stack(
                             children: [
                               Image.asset(
-                                'assets/spinach.png',
+                                'assets/$imageUrl',
                                 width: double.infinity,
                                 height: 281,
                                 fit: BoxFit.cover,
@@ -73,18 +92,18 @@ class DetailIdentifyPage extends StatelessWidget {
                             children: [
                               Row(
                                 children: [
-                                  CategoryIdentifyBullet('VEGETABLES'),
+                                  CategoryIdentifyBullet(categoryOne),
                                   SizedBox(
                                     width: 10,
                                   ),
-                                  CategoryIdentifyBullet('HEALTHY'),
+                                  CategoryIdentifyBullet(categoryTwo),
                                 ],
                               ),
                               SizedBox(
                                 height: 25,
                               ),
                               Text(
-                                'Spinach',
+                                title,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: darkColor,
@@ -125,7 +144,7 @@ class DetailIdentifyPage extends StatelessWidget {
                                     width: 8,
                                   ),
                                   Text(
-                                    '4.8',
+                                    rating,
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 13,
@@ -155,7 +174,7 @@ class DetailIdentifyPage extends StatelessWidget {
                                         height: 12,
                                       ),
                                       Text(
-                                        'Plantae',
+                                        kingdomeClass,
                                         style: TextStyle(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 14,
@@ -183,7 +202,7 @@ class DetailIdentifyPage extends StatelessWidget {
                                         height: 12,
                                       ),
                                       Text(
-                                        'Amaranthaceae',
+                                        familyClass,
                                         style: TextStyle(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 14,
@@ -209,7 +228,7 @@ class DetailIdentifyPage extends StatelessWidget {
                                 height: 12,
                               ),
                               Text(
-                                'Spinach is thought to have originated in ancient Persia (modern Iran and neighboring countries). It is not known by whom, or when, spinach was introduced to India, but the plant was subsequ ently introduced to ancient China, where it was known as "Persian vegetable"',
+                                description,
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 14,

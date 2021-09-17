@@ -3,6 +3,7 @@ import 'package:plant_app/widget/bottom_navbar.dart';
 import 'package:plant_app/widget/cactus_card.dart';
 
 import '../theme.dart';
+import 'detail_identify_page.dart';
 
 class CactusPage extends StatelessWidget {
   @override
@@ -122,7 +123,29 @@ class CactusPage extends StatelessWidget {
                       SizedBox(
                         height: 35,
                       ),
-                      CactusCard('cactus3.png', 'Circle Cactus'),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return DetailIdentifyPage(
+                                  imageUrl: 'circle_cactus.png',
+                                  categoryOne: 'DANGER',
+                                  categoryTwo: 'DECORATION',
+                                  title: 'Circle Cactus',
+                                  kingdomeClass: 'Plantee',
+                                  familyClass: 'Cactaceae',
+                                  rating: '4.1',
+                                  description:
+                                      'The word "cactus" derives, through Latin, from the Ancient Greek κάκτος, kaktos, a name orig inally used by Theophrastus for a spiny plant whose identity is not certain. Cacti occur in a wide range of shapes and sizes. Most cacti live in habitats subject to at least some drought. ',
+                                );
+                              },
+                            ),
+                          );
+                        },
+                        child: CactusCard('cactus3.png', 'Circle Cactus'),
+                      ),
                       SizedBox(
                         height: 35,
                       ),
