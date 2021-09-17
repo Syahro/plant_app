@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/pages/cactus_page.dart';
 import 'package:plant_app/widget/alphabet_filter.dart';
 import 'package:plant_app/widget/bottom_navbar.dart';
 import 'package:plant_app/widget/content_title.dart';
@@ -123,7 +124,19 @@ class SpeciesPage extends StatelessWidget {
                           SizedBox(
                             height: 15,
                           ),
-                          ContentTitle('CACTUS', false),
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return CactusPage();
+                                  },
+                                ),
+                              );
+                            },
+                            child: ContentTitle('CACTUS', false),
+                          ),
                           SizedBox(
                             height: 15,
                           ),
